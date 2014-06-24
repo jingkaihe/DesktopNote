@@ -18,6 +18,8 @@
 		A13BB59D1959D4D90023AE15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13BB57C1959D4D90023AE15 /* Cocoa.framework */; };
 		A13BB5A51959D4D90023AE15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A13BB5A31959D4D90023AE15 /* InfoPlist.strings */; };
 		A13BB5A71959D4D90023AE15 /* DesktopNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5A61959D4D90023AE15 /* DesktopNoteTests.m */; };
+		A13BB5B51959D5710023AE15 /* NoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5B41959D5710023AE15 /* NoteController.m */; };
+		A18DD0ED1959DA1D00FF6AB2 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A18DD0EC1959DA1D00FF6AB2 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,10 @@
 		A13BB5A21959D4D90023AE15 /* DesktopNoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesktopNoteTests-Info.plist"; sourceTree = "<group>"; };
 		A13BB5A41959D4D90023AE15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A13BB5A61959D4D90023AE15 /* DesktopNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesktopNoteTests.m; sourceTree = "<group>"; };
+		A13BB5B31959D5710023AE15 /* NoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteController.h; sourceTree = "<group>"; };
+		A13BB5B41959D5710023AE15 /* NoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteController.m; sourceTree = "<group>"; };
+		A18DD0EB1959DA1D00FF6AB2 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		A18DD0EC1959DA1D00FF6AB2 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 		A13BB5821959D4D90023AE15 /* DesktopNote */ = {
 			isa = PBXGroup;
 			children = (
+				A13BB5B21959D54C0023AE15 /* Models */,
+				A13BB5B01959D53C0023AE15 /* Controllers */,
 				A13BB58E1959D4D90023AE15 /* AppDelegate.h */,
 				A13BB58F1959D4D90023AE15 /* AppDelegate.m */,
 				A13BB5911959D4D90023AE15 /* MainMenu.xib */,
@@ -152,6 +160,24 @@
 				A13BB5A31959D4D90023AE15 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A13BB5B01959D53C0023AE15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A13BB5B31959D5710023AE15 /* NoteController.h */,
+				A13BB5B41959D5710023AE15 /* NoteController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A13BB5B21959D54C0023AE15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A18DD0EB1959DA1D00FF6AB2 /* Note.h */,
+				A18DD0EC1959DA1D00FF6AB2 /* Note.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13BB5B51959D5710023AE15 /* NoteController.m in Sources */,
 				A13BB5901959D4D90023AE15 /* AppDelegate.m in Sources */,
 				A13BB5891959D4D90023AE15 /* main.m in Sources */,
+				A18DD0ED1959DA1D00FF6AB2 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +494,7 @@
 				A13BB5AC1959D4D90023AE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A13BB5AD1959D4D90023AE15 /* Build configuration list for PBXNativeTarget "DesktopNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +503,7 @@
 				A13BB5AF1959D4D90023AE15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
