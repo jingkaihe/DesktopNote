@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Note.h"
+#import <WebKit/WebKit.h>
 
-@interface NoteController : NSObject <NSTableViewDelegate>
+#import "Note.h"
+#import "Parser.h"
+
+@interface NoteController : NSObject <NSTableViewDelegate, NSTextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet WebView *webView;
 
 @property (nonatomic, weak) IBOutlet NSTextField *titleTextField;
 @property (nonatomic, strong) IBOutlet NSTextView *contentField;

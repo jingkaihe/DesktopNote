@@ -18,6 +18,25 @@
     self.selectedNote = [self.notes firstObject];
     [self.titleTextField setStringValue: self.selectedNote.title];
     [self.contentField setString:self.selectedNote.content];
+    
+    [self.contentField setDelegate:self];
+}
+
+- (void)textViewDidChangeSelection:(NSNotification *)notification
+{
+    if ([notification object] == self.contentField) {
+        NSLog(@"hahaha");
+        
+        Document *doc = [[Document alloc] initWithContent:self.contentField.string];
+        Parser *parser = [[Parser alloc] initWithDocument:doc];
+        [parser parse];
+        
+        NSLog(@"%@", [parser render]);
+        [[self.webView mainFrame]
+         loadHTMLString:[parser render] baseURL:nil];
+    }else{
+        NSLog(@"shit");
+    }
 }
 
 -(NSMutableArray *)notes
@@ -56,9 +75,16 @@
     
     Note *note = [self.notes objectAtIndex:row];
     
+    Document *doc = [[Document alloc] initWithContent:note.content];
+    Parser *parser = [[Parser alloc] initWithDocument:doc];
+    [parser parse];
+    
+    [[self.webView mainFrame]
+     loadHTMLString:[parser render] baseURL:nil];
+    
     [self.titleTextField setStringValue: note.title];
     [self.contentField setString:note.content];
-    
+
     self.selectedNote = note;
 }
 
