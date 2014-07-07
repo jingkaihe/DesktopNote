@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1075D75196AF2BE00D6ACD6 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = A1075D74196AF2BE00D6ACD6 /* markdown.css */; };
 		A135350E1969DD92005CD389 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A135350D1969DD92005CD389 /* WebKit.framework */; };
 		A13BB57D1959D4D90023AE15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13BB57C1959D4D90023AE15 /* Cocoa.framework */; };
 		A13BB5871959D4D90023AE15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A13BB5851959D4D90023AE15 /* InfoPlist.strings */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1075D74196AF2BE00D6ACD6 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
 		A135350D1969DD92005CD389 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A13BB5791959D4D90023AE15 /* DesktopNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13BB57C1959D4D90023AE15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -115,11 +117,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1075D73196AF28600D6ACD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1075D74196AF2BE00D6ACD6 /* markdown.css */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		A13BB5701959D4D90023AE15 = {
 			isa = PBXGroup;
 			children = (
 				A13BB5821959D4D90023AE15 /* DesktopNote */,
 				A13BB5A01959D4D90023AE15 /* DesktopNoteTests */,
+				A1075D73196AF28600D6ACD6 /* Resources */,
 				A13BB57B1959D4D90023AE15 /* Frameworks */,
 				A13BB57A1959D4D90023AE15 /* Products */,
 			);
@@ -335,6 +346,7 @@
 				A13BB5951959D4D90023AE15 /* Images.xcassets in Resources */,
 				A13BB58D1959D4D90023AE15 /* Credits.rtf in Resources */,
 				A13BB5931959D4D90023AE15 /* MainMenu.xib in Resources */,
+				A1075D75196AF2BE00D6ACD6 /* markdown.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

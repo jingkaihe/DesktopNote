@@ -22,6 +22,18 @@
     [self.contentField setDelegate:self];
     [self.contentField setRichText:YES];
     [[self.contentField textStorage] setFont:[NSFont fontWithName:@"Lucida Grande" size:14.0]];
+
+    WebPreferences *webPrefs = [WebPreferences
+                                standardPreferences];
+    
+    [webPrefs setUserStyleSheetEnabled:YES];
+
+    [webPrefs setUserStyleSheetLocation:[[NSBundle mainBundle]
+                                         URLForResource:@"markdown"
+                                         withExtension:@"css"]];
+    
+    //Set your webview's preferences
+    [self.webView setPreferences:webPrefs];
 }
 
 - (void)textViewDidChangeSelection:(NSNotification *)notification

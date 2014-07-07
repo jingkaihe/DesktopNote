@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseFragment.h"
+#import "ParagraphFragment.h"
 
 @interface BlankLineFragment : BaseFragment
 
