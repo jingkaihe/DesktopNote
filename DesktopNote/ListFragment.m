@@ -8,8 +8,8 @@
 
 #import "ListFragment.h"
 
-static NSString *orderedListPattern = @"\\A[\\d+]\\.\\s+(.+?)";
-static NSString *unorderedListPattern = @"\\A\\*\\s+(.+?)";
+static NSString *orderedListPattern = @"\\A[\\d+]\\.\\s+(.+)";
+static NSString *unorderedListPattern = @"\\A\\*\\s+(.+)";
 
 @implementation ListFragment
 

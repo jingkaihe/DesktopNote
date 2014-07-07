@@ -25,17 +25,13 @@
 - (void)textViewDidChangeSelection:(NSNotification *)notification
 {
     if ([notification object] == self.contentField) {
-        NSLog(@"hahaha");
         
         Document *doc = [[Document alloc] initWithContent:self.contentField.string];
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];
         
-        NSLog(@"%@", [parser render]);
         [[self.webView mainFrame]
          loadHTMLString:[parser render] baseURL:nil];
-    }else{
-        NSLog(@"shit");
     }
 }
 
