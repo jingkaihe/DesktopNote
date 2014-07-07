@@ -9,10 +9,10 @@
 #import "TextFragment.h"
 
 static NSString *emailPattern = @"<([A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4})>";
-static NSString *emailFormat = @"<a href=\"mailto:%@\" target=\"_top\">Send Mail</a>";
+static NSString *emailFormat = @"<a href=\"mailto:%@\" target=\"_top\">%@</a>";
 
 static NSString *autolinkPattern = @"<((http|https|ftp)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+)>";
-static NSString *autolinkFormat = @"<a href=\"%@\" />";
+static NSString *autolinkFormat = @"<a href=\"%@\">%@</a>";
 
 static NSString *inlineLinkPattern = @"\\[(.+?)\\]\\s*\\((.+?)\\)";
 static NSString *inlineLinkFormat = @"<a href=\"%@\">%@</a>";

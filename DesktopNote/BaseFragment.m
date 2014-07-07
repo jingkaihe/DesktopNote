@@ -58,7 +58,7 @@
             stringByReplacingMatchesInString:self.content
             options:0
             range:NSMakeRange(0, [self.content length])
-            withTemplate:[NSString stringWithFormat:format, @"$1"]];
+            withTemplate:[NSString stringWithFormat:format, @"$1", @"$1"]];
 }
 
 -(NSString *) toHTML

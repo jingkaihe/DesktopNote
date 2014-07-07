@@ -20,13 +20,17 @@
     [self.contentField setString:self.selectedNote.content];
     
     [self.contentField setDelegate:self];
+    [self.contentField setRichText:YES];
+    [[self.contentField textStorage] setFont:[NSFont fontWithName:@"Lucida Grande" size:14.0]];
 }
 
 - (void)textViewDidChangeSelection:(NSNotification *)notification
 {
     if ([notification object] == self.contentField) {
         
-        Document *doc = [[Document alloc] initWithContent:self.contentField.string];
+        Document *doc = [[Document alloc]
+                         initWithContent:self.contentField.string];
+        
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];
         
