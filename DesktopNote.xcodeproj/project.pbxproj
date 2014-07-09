@@ -21,7 +21,8 @@
 		A13BB5A51959D4D90023AE15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A13BB5A31959D4D90023AE15 /* InfoPlist.strings */; };
 		A13BB5A71959D4D90023AE15 /* DesktopNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5A61959D4D90023AE15 /* DesktopNoteTests.m */; };
 		A13BB5B51959D5710023AE15 /* NoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5B41959D5710023AE15 /* NoteController.m */; };
-		A18DD0ED1959DA1D00FF6AB2 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A18DD0EC1959DA1D00FF6AB2 /* Note.m */; };
+		A150494F196D748F001C2341 /* DesktopNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A150494D196D748F001C2341 /* DesktopNote.xcdatamodeld */; };
+		A1504952196D7515001C2341 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A1504951196D7515001C2341 /* Note.m */; };
 		A1DC2A521969D7EE0079DD15 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A411969D7EE0079DD15 /* BaseFragment.m */; };
 		A1DC2A531969D7EE0079DD15 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A431969D7EE0079DD15 /* BlankLineFragment.m */; };
 		A1DC2A541969D7EE0079DD15 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A451969D7EE0079DD15 /* HeadingFragment.m */; };
@@ -69,8 +70,9 @@
 		A13BB5A61959D4D90023AE15 /* DesktopNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesktopNoteTests.m; sourceTree = "<group>"; };
 		A13BB5B31959D5710023AE15 /* NoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteController.h; sourceTree = "<group>"; };
 		A13BB5B41959D5710023AE15 /* NoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteController.m; sourceTree = "<group>"; };
-		A18DD0EB1959DA1D00FF6AB2 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		A18DD0EC1959DA1D00FF6AB2 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		A150494E196D748F001C2341 /* DesktopNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesktopNote.xcdatamodel; sourceTree = "<group>"; };
+		A1504950196D7515001C2341 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		A1504951196D7515001C2341 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		A1DC2A401969D7EE0079DD15 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
 		A1DC2A411969D7EE0079DD15 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
 		A1DC2A421969D7EE0079DD15 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A13BB58F1959D4D90023AE15 /* AppDelegate.m */,
 				A13BB5911959D4D90023AE15 /* MainMenu.xib */,
 				A13BB5941959D4D90023AE15 /* Images.xcassets */,
+				A150494D196D748F001C2341 /* DesktopNote.xcdatamodeld */,
 				A13BB5831959D4D90023AE15 /* Supporting Files */,
 			);
 			path = DesktopNote;
@@ -223,8 +226,8 @@
 		A13BB5B21959D54C0023AE15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A18DD0EB1959DA1D00FF6AB2 /* Note.h */,
-				A18DD0EC1959DA1D00FF6AB2 /* Note.m */,
+				A1504950196D7515001C2341 /* Note.h */,
+				A1504951196D7515001C2341 /* Note.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -365,12 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A150494F196D748F001C2341 /* DesktopNote.xcdatamodeld in Sources */,
 				A13BB5B51959D5710023AE15 /* NoteController.m in Sources */,
 				A1DC2A591969D7EE0079DD15 /* Fragments.m in Sources */,
 				A1DC2A521969D7EE0079DD15 /* BaseFragment.m in Sources */,
 				A1DC2A581969D7EE0079DD15 /* TextFragment.m in Sources */,
 				A1DC2A601969D7FC0079DD15 /* Parser.m in Sources */,
 				A13BB5901959D4D90023AE15 /* AppDelegate.m in Sources */,
+				A1504952196D7515001C2341 /* Note.m in Sources */,
 				A1DC2A541969D7EE0079DD15 /* HeadingFragment.m in Sources */,
 				A13BB5891959D4D90023AE15 /* main.m in Sources */,
 				A1DC2A5A1969D7EE0079DD15 /* ListFragment.m in Sources */,
@@ -379,7 +384,6 @@
 				A1DC2A5F1969D7FC0079DD15 /* Document.m in Sources */,
 				A1DC2A571969D7EE0079DD15 /* LinedHeadingFragment.m in Sources */,
 				A1DC2A561969D7EE0079DD15 /* ParagraphFragment.m in Sources */,
-				A18DD0ED1959DA1D00FF6AB2 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +608,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A150494D196D748F001C2341 /* DesktopNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A150494E196D748F001C2341 /* DesktopNote.xcdatamodel */,
+			);
+			currentVersion = A150494E196D748F001C2341 /* DesktopNote.xcdatamodel */;
+			path = DesktopNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A13BB5711959D4D90023AE15 /* Project object */;
 }

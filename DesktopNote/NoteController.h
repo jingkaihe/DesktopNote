@@ -22,6 +22,9 @@
 
 @property (nonatomic, weak) IBOutlet NSButton *saveButton;
 
-@property (nonatomic, copy) NSMutableArray *notes;
-@property (nonatomic, weak) Note *selectedNote;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic, strong) NSMutableArray *notes;
+@property (nonatomic, strong) Note *selectedNote;
+
 @end

@@ -15,12 +15,17 @@
     [super awakeFromNib];
     [self.tableView setDelegate:self];
     
-    self.selectedNote = [self.notes firstObject];
+    // Persistence delegation
+    id delegate = [[NSApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+
+    self.selectedNote = [self.notes lastObject];
+    
     [self.titleTextField setStringValue: self.selectedNote.title];
     [self.contentField setString:self.selectedNote.content];
     
     [self.contentField setDelegate:self];
-    [self.contentField setRichText:YES];
+    // [self.contentField setRichText:YES];
     [[self.contentField textStorage] setFont:[NSFont fontWithName:@"Lucida Grande" size:14.0]];
 
     WebPreferences *webPrefs = [WebPreferences
@@ -51,19 +56,6 @@
     }
 }
 
--(NSMutableArray *)notes
-{
-    if (! _notes) {
-        _notes = [NSMutableArray array];
-        
-        Note *note = [[Note alloc] initWithTitle:@"Example" content:@"Hello World!"];
-
-        [_notes addObject:note];
-    }
-    
-    return _notes;
-}
-
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [self.notes count];
 }
@@ -76,11 +68,37 @@
     return title;
 }
 
+-(NSMutableArray *)notes
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *notes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    _notes = [NSMutableArray arrayWithArray:notes];
+    
+    // NSLog(@" ---- %ld ----", (unsigned long)[_notes count]);
+    
+    if ([_notes count] == 0) {
+        Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+        
+        note.title = @"Hello";
+        note.content = @"World";
+        
+        [self.managedObjectContext save:nil];
+    }
+    
+    return _notes;
+}
+
 - (void) tableViewSelectionDidChange:(NSNotification *)notification
 {
+    [self debug];
     
     NSInteger row = [self.tableView selectedRow];
-    
+
+
     if (row == -1) {
         return;
     }
@@ -89,12 +107,13 @@
     
     Document *doc = [[Document alloc] initWithContent:note.content];
     Parser *parser = [[Parser alloc] initWithDocument:doc];
+    
     [parser parse];
     
     [[self.webView mainFrame]
      loadHTMLString:[parser render] baseURL:nil];
     
-    [self.titleTextField setStringValue: note.title];
+    [self.titleTextField setStringValue:note.title];
     [self.contentField setString:note.content];
 
     self.selectedNote = note;
@@ -110,21 +129,40 @@
     if (self.selectedNote) {
         self.selectedNote.title = title;
         self.selectedNote.content = content;
+        
+        [self.managedObjectContext save:nil];
+        
+        [self.managedObjectContext
+         refreshObject:self.selectedNote mergeChanges:YES];
+        
+        [self.tableView reloadData];
     }
 
-    [self.tableView reloadData];
 }
 
 -(IBAction)new:(id)sender
 {
     NSLog(@"New note...");
-    Note *note = [[Note alloc] init];
-    [self.notes addObject:note];
+    Note *note = [NSEntityDescription
+                  insertNewObjectForEntityForName:@"Note"
+                  inManagedObjectContext:self.managedObjectContext];
+    
+    note.title = @"";
+    note.content = @"";
+    [self.managedObjectContext save:nil];
+
+    [self.managedObjectContext
+     refreshObject:self.selectedNote mergeChanges:YES];
     
     self.titleTextField.stringValue = @"";
     self.contentField.string = @"";
     
-    self.selectedNote = note;
+    self.selectedNote = [self.notes lastObject];
 }
 
+-(void)debug{
+    Note *second = [self.notes objectAtIndex:1];
+    
+    NSLog(@"%@", second.content);
+}
 @end
