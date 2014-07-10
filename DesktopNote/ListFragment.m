@@ -9,7 +9,7 @@
 #import "ListFragment.h"
 
 static NSString *orderedListPattern = @"\\A[\\d+]\\.\\s+(.+)";
-static NSString *unorderedListPattern = @"\\A\\*\\s+(.+)";
+static NSString *unorderedListPattern = @"\\A[\\*-]\\s+(.+)";
 
 @implementation ListFragment
 
@@ -40,7 +40,8 @@ static NSString *unorderedListPattern = @"\\A\\*\\s+(.+)";
 
 +(NSString *) getTagByText:(NSString *)text
 {
-    if ([text characterAtIndex:0] == '*') {
+    char firstChar = [text characterAtIndex:0];
+    if (firstChar == '*' || firstChar == '-') {
         return @"ul";
     }else{
         return @"ol";
@@ -62,7 +63,8 @@ static NSString *unorderedListPattern = @"\\A\\*\\s+(.+)";
                                                options:0
                                                error:&error2];
     
-    if ([text characterAtIndex:0] == '*') {
+    char firstChar = [text characterAtIndex:0];
+    if (firstChar == '*' || firstChar == '-') {
         NSArray *matches = [unorderedListRegex matchesInString:text options:0 range:range];
         NSTextCheckingResult *match = [matches objectAtIndex:0];
         return [text substringWithRange:[match rangeAtIndex:1]];
