@@ -96,7 +96,7 @@ static NSString *delFormat = @"<del>%@</del>";
                     stringByReplacingMatchesInString:self.content
                     options:0
                     range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$2", @"$1"]];
+                    withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$1", @"$2"]];
 }
 
 - (void) convertReferenceImage
@@ -112,7 +112,7 @@ static NSString *delFormat = @"<del>%@</del>";
                     stringByReplacingMatchesInString:self.content
                     options:0
                     range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$2", @"$1"]];
+                    withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$1", @"$2"]];
 }
 
 - (void) convertInlineLink

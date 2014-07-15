@@ -94,10 +94,7 @@
 
 - (void) tableViewSelectionDidChange:(NSNotification *)notification
 {
-    [self debug];
-    
     NSInteger row = [self.tableView selectedRow];
-
 
     if (row == -1) {
         return;
@@ -158,12 +155,6 @@
     self.contentField.string = @"";
     
     self.selectedNote = [self.notes lastObject];
-}
-
--(void)debug{
-    Note *second = [self.notes objectAtIndex:1];
-    
-    NSLog(@"%@", second.content);
 }
 
 - (IBAction)export:(id)sender
