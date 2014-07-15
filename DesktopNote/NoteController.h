@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
-
+#import <Quartz/Quartz.h>
 #import "Note.h"
 #import "Parser.h"
 

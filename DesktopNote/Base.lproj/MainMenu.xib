@@ -745,6 +745,17 @@
                             <nil key="identifier"/>
                         </webPreferences>
                     </webView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wk6-d5-xK2">
+                        <rect key="frame" x="821" y="19" width="111" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Export as PDF" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d14-gw-eKr">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="export:" target="6d8-rb-rNQ" id="HmN-hu-7mM"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
         </window>

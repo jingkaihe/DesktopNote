@@ -23,6 +23,7 @@
 		A13BB5B51959D5710023AE15 /* NoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5B41959D5710023AE15 /* NoteController.m */; };
 		A150494F196D748F001C2341 /* DesktopNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A150494D196D748F001C2341 /* DesktopNote.xcdatamodeld */; };
 		A1504952196D7515001C2341 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A1504951196D7515001C2341 /* Note.m */; };
+		A183F6FE1975933600AB5794 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A183F6FD1975933600AB5794 /* Quartz.framework */; };
 		A1DC2A521969D7EE0079DD15 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A411969D7EE0079DD15 /* BaseFragment.m */; };
 		A1DC2A531969D7EE0079DD15 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A431969D7EE0079DD15 /* BlankLineFragment.m */; };
 		A1DC2A541969D7EE0079DD15 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A451969D7EE0079DD15 /* HeadingFragment.m */; };
@@ -73,6 +74,7 @@
 		A150494E196D748F001C2341 /* DesktopNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DesktopNote.xcdatamodel; sourceTree = "<group>"; };
 		A1504950196D7515001C2341 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		A1504951196D7515001C2341 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		A183F6FD1975933600AB5794 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		A1DC2A401969D7EE0079DD15 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
 		A1DC2A411969D7EE0079DD15 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
 		A1DC2A421969D7EE0079DD15 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A183F6FE1975933600AB5794 /* Quartz.framework in Frameworks */,
 				A135350E1969DD92005CD389 /* WebKit.framework in Frameworks */,
 				A13BB57D1959D4D90023AE15 /* Cocoa.framework in Frameworks */,
 			);
@@ -150,6 +153,7 @@
 		A13BB57B1959D4D90023AE15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A183F6FD1975933600AB5794 /* Quartz.framework */,
 				A135350D1969DD92005CD389 /* WebKit.framework */,
 				A13BB57C1959D4D90023AE15 /* Cocoa.framework */,
 				A13BB59B1959D4D90023AE15 /* XCTest.framework */,

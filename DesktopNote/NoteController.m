@@ -165,4 +165,21 @@
     
     NSLog(@"%@", second.content);
 }
+
+- (IBAction)export:(id)sender
+{
+    if (!self.selectedNote) {
+        return;
+    }
+    
+    NSRect webRect = [[[[self.webView mainFrame] frameView] documentView] frame];
+    NSData *pdfData = [[[[self.webView mainFrame] frameView] documentView] dataWithPDFInsideRect:webRect];
+    
+    PDFDocument *document = [[PDFDocument alloc] initWithData:pdfData];
+    
+    NSString *currentUserHomeDirectory = NSHomeDirectory();
+    NSString *fileName = [NSString stringWithFormat: @"%@/Desktop/%@.pdf", currentUserHomeDirectory, self.selectedNote.title];
+    
+    [document writeToFile:fileName];
+}
 @end
