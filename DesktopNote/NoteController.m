@@ -173,4 +173,35 @@
     
     [document writeToFile:fileName];
 }
+
+- (IBAction)insertImage:(id)sender
+{
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    
+    NSArray *arrayOfAllowedFileType = @[@"jpg", @"png", @"gif"];
+    
+    [openPanel setCanChooseFiles:YES];
+    [openPanel setAllowedFileTypes:arrayOfAllowedFileType];
+    [openPanel setAllowsMultipleSelection:YES];
+    
+    if ([openPanel runModal] == NSOKButton) {
+        NSArray *files = [openPanel URLs];
+        
+        for (NSURL *file in files) {
+            NSLog(@"File Path: %@", [file path]);
+            
+            NSString *filePath = [file path];
+            
+            NSInteger insertPoint =
+            [[[self.contentField selectedRanges]
+              objectAtIndex:0] rangeValue].location;
+            
+            NSString *insertMarkdown = [NSString
+                                        stringWithFormat:@"![file://%@](Enter your comment)", filePath];
+            if (insertPoint) {
+                [self.contentField insertText:insertMarkdown];
+            }
+        }
+    }
+}
 @end

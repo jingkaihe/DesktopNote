@@ -70,7 +70,12 @@
                         <items>
                             <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
-                                    <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
+                                    <action selector="new:" target="6d8-rb-rNQ" id="3Xu-aj-AaJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Insert Image" keyEquivalent="N" id="Sab-OS-ugi">
+                                <connections>
+                                    <action selector="insertImage:" target="6d8-rb-rNQ" id="XZj-AF-bab"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
