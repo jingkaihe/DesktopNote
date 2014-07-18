@@ -157,6 +157,23 @@
     self.selectedNote = [self.notes lastObject];
 }
 
+-(IBAction)delete:(id)sender
+{
+    NSLog(@"Delete note...");
+    
+    if (!self.selectedNote) {
+        return;
+    }
+    
+    [self.managedObjectContext deleteObject:self.selectedNote];
+    [self.managedObjectContext save:nil];
+    
+    [self.managedObjectContext
+     refreshObject:self.selectedNote mergeChanges:YES];
+    
+    [self.tableView reloadData];
+}
+
 - (IBAction)export:(id)sender
 {
     if (!self.selectedNote) {

@@ -739,7 +739,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-WD-vEO">
-                        <rect key="frame" x="108" y="34" width="77" height="19"/>
+                        <rect key="frame" x="20" y="34" width="77" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="roundRect" title="New Note" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pza-yK-Xo0">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -747,6 +747,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="new:" target="6d8-rb-rNQ" id="VnT-Ej-Y6l"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvG-Wm-9mC">
+                        <rect key="frame" x="108" y="34" width="77" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Delete" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4TJ-7H-YnS">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="titleBar" size="12"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="delete:" target="6d8-rb-rNQ" id="W5I-yo-JoC"/>
                         </connections>
                     </button>
                     <webView translatesAutoresizingMaskIntoConstraints="NO" id="FQ9-DL-byN">
@@ -779,13 +790,15 @@
                     <constraint firstAttribute="trailing" secondItem="wk6-d5-xK2" secondAttribute="trailing" constant="14" id="LRq-tr-3co"/>
                     <constraint firstItem="pHn-ti-8Bl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="Lef-Gu-fMn"/>
                     <constraint firstItem="FQ9-DL-byN" firstAttribute="leading" secondItem="x6q-xo-7fp" secondAttribute="trailing" constant="8" id="Qov-g3-uVY"/>
+                    <constraint firstItem="cvG-Wm-9mC" firstAttribute="leading" secondItem="cvl-WD-vEO" secondAttribute="trailing" constant="40" id="Zi3-MB-UTH"/>
                     <constraint firstItem="x6q-xo-7fp" firstAttribute="top" secondItem="cXJ-HA-CAK" secondAttribute="bottom" constant="12" id="Zww-dl-5yC"/>
                     <constraint firstItem="cXJ-HA-CAK" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="dDB-U3-c3B"/>
+                    <constraint firstItem="cvG-Wm-9mC" firstAttribute="top" secondItem="pHn-ti-8Bl" secondAttribute="bottom" constant="8" id="gPO-qv-HUv"/>
                     <constraint firstItem="FQ9-DL-byN" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="hul-hq-ACz"/>
                     <constraint firstItem="cvl-WD-vEO" firstAttribute="top" secondItem="pHn-ti-8Bl" secondAttribute="bottom" constant="8" id="kdt-GB-5L9"/>
                     <constraint firstAttribute="bottom" secondItem="aay-re-tek" secondAttribute="bottom" constant="35" id="ldX-Yt-N1r"/>
                     <constraint firstItem="aay-re-tek" firstAttribute="top" secondItem="x6q-xo-7fp" secondAttribute="bottom" constant="8" id="oZw-lA-UVY"/>
-                    <constraint firstItem="cvl-WD-vEO" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="108" id="pLa-VL-Dx0"/>
+                    <constraint firstItem="cvl-WD-vEO" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="pLa-VL-Dx0"/>
                     <constraint firstItem="cXJ-HA-CAK" firstAttribute="leading" secondItem="pHn-ti-8Bl" secondAttribute="trailing" constant="20" id="qp7-Af-KiO"/>
                     <constraint firstAttribute="bottom" secondItem="cvl-WD-vEO" secondAttribute="bottom" constant="35" id="vbi-yQ-Uyy"/>
                 </constraints>
