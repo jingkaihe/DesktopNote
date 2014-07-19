@@ -166,7 +166,5 @@ static NSString *delFormat = @"<del>%@</del>";
                     options:0
                     range:NSMakeRange(0, [self.content length])
                     withTemplate:[NSString stringWithFormat:youtubeVideoFormat, @"$2", @"$3", @"$1"]];
-    
-    NSLog(@"%@", self.content);
 }
 @end
