@@ -21,7 +21,6 @@
 
     self.selectedNote = [self.notes lastObject];
     
-    [self.titleTextField setStringValue: self.selectedNote.title];
     [self.contentField setString:self.selectedNote.content];
     
     [self.contentField setDelegate:self];
@@ -110,7 +109,6 @@
     [[self.webView mainFrame]
      loadHTMLString:[parser render] baseURL:nil];
     
-    [self.titleTextField setStringValue:note.title];
     [self.contentField setString:note.content];
 
     self.selectedNote = note;
@@ -120,7 +118,7 @@
 {
     NSLog(@"Saving note...");
     
-    NSString *title = self.titleTextField.stringValue;
+    NSString *title = [self getPlainTitle:self.contentField.string];
     NSString *content = self.contentField.string;
     
     if (self.selectedNote) {
@@ -151,7 +149,6 @@
     [self.managedObjectContext
      refreshObject:self.selectedNote mergeChanges:YES];
     
-    self.titleTextField.stringValue = @"";
     self.contentField.string = @"";
     
     self.selectedNote = [self.notes lastObject];
@@ -220,5 +217,24 @@
             }
         }
     }
+}
+
+- (NSString *)getPlainTitle: (NSString *)content
+{
+    NSString *markdownTitle = [[content
+                                componentsSeparatedByString:@"\n"] firstObject];
+    
+    Document *doc = [[Document alloc]
+                     initWithContent:markdownTitle];
+    
+    Parser *parser = [[Parser alloc] initWithDocument:doc];
+    [parser parse];
+    
+    NSString *title = [parser render];
+    NSRange r;
+    while ((r = [title rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
+        title = [title stringByReplacingCharactersInRange:r withString:@""];
+    }
+    return title;
 }
 @end

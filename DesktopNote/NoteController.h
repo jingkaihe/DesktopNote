@@ -17,7 +17,6 @@
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet WebView *webView;
 
-@property (nonatomic, weak) IBOutlet NSTextField *titleTextField;
 @property (nonatomic, strong) IBOutlet NSTextView *contentField;
 
 @property (nonatomic, weak) IBOutlet NSButton *saveButton;
