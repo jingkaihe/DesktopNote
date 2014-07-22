@@ -221,20 +221,27 @@
 
 - (NSString *)getPlainTitle: (NSString *)content
 {
-    NSString *markdownTitle = [[content
-                                componentsSeparatedByString:@"\n"] firstObject];
+    NSArray *contentArray = [content
+                             componentsSeparatedByString:@"\n"];
     
-    Document *doc = [[Document alloc]
-                     initWithContent:markdownTitle];
-    
-    Parser *parser = [[Parser alloc] initWithDocument:doc];
-    [parser parse];
-    
-    NSString *title = [parser render];
-    NSRange r;
-    while ((r = [title rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
-        title = [title stringByReplacingCharactersInRange:r withString:@""];
+    for (NSString *markdownTitle in contentArray) {
+        Document *doc = [[Document alloc]
+                         initWithContent:markdownTitle];
+        
+        Parser *parser = [[Parser alloc] initWithDocument:doc];
+        [parser parse];
+        
+        NSString *title = [parser render];
+        NSRange r;
+        while ((r = [title rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
+            title = [title stringByReplacingCharactersInRange:r withString:@""];
+        }
+        
+        if (title.length > 0) {
+            return title;
+        }
     }
-    return title;
+    
+    return @"No Title";
 }
 @end
