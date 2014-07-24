@@ -8,7 +8,7 @@
 
 #import "HorizontalFragment.h"
 
-static NSString *pattern = @"\\A[*-=]{3,}\\s*";
+static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
 
 @implementation HorizontalFragment
 

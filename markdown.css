@@ -78,10 +78,9 @@ h6 {
   font-size: 14px; }
  
 hr {
-  border: 0 none;
   color: #cccccc;
-  height: 4px;
-  padding: 0; }
+  padding: 0; 
+}
  
 body > h2:first-child {
   margin-top: 0;

@@ -69,6 +69,7 @@
                                         initWithContent:lineOfMD
                                         andDocument:_document];
             [frag parse];
+            
         }else if ([ListFragment isListWithLine:lineOfMD andDocument:_document] == YES){
             ++ _document.startLine;
             

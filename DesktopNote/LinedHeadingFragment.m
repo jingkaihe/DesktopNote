@@ -9,7 +9,7 @@
 #import "LinedHeadingFragment.h"
 
 static NSString *h1Pattern = @"\\A={3,}\\s*";
-static NSString *h2Pattern = @"\\A-{3,}\\s*";
+static NSString *h2Pattern = @"\\A\\*{3,}\\s*";
 
 @implementation LinedHeadingFragment
 

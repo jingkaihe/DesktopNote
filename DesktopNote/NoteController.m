@@ -49,7 +49,7 @@
         
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];
-        
+
         [[self.webView mainFrame]
          loadHTMLString:[parser render] baseURL:nil];
     }
@@ -76,8 +76,6 @@
     NSArray *notes = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     _notes = [NSMutableArray arrayWithArray:notes];
-    
-    // NSLog(@" ---- %ld ----", (unsigned long)[_notes count]);
     
     if ([_notes count] == 0) {
         Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
