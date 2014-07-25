@@ -88,9 +88,11 @@ static NSString *h2Pattern = @"\\A\\*{3,}\\s*";
     BOOL h2Match = [[h2Regex matchesInString:self.content options:0 range:range] count] > 0;
     
     if (h1Match) {
-        self.content = [NSString stringWithFormat:@"<h1>%@</h1>", element.content];
+        self.content = [NSString stringWithFormat:@"<h1>%@</h1>",
+                        [element toHTML]];
     }else if (h2Match){
-        self.content = [NSString stringWithFormat:@"<h2>%@</h2>", element.content];
+        self.content = [NSString stringWithFormat:@"<h2>%@</h2>",
+                        [element toHTML]];
     }
     
     return self.content;
