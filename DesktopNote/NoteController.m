@@ -50,6 +50,7 @@
         Parser *parser = [[Parser alloc] initWithDocument:doc];
         [parser parse];
 
+        NSLog(@"%@", [parser render]);
         [[self.webView mainFrame]
          loadHTMLString:[parser render] baseURL:nil];
     }

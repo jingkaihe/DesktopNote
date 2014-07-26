@@ -24,11 +24,11 @@ static NSString *referenceLinkFormat = @"<a href=\"%@\">%@</a>";
 static NSString *youtubeVideoPattern = @"\\!v\\[(.+?)\\]\\s*\\[([0-9]+?)x([0-9]+?)\\]";
 static NSString *youtubeVideoFormat = @"<iframe width='%@' height='%@' src='%@' frameborder='0' allowfullscreen></iframe>";
 
-static NSString *inlineImagePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\)";
-static NSString *inlineImageFormat = @"<img src=\"%@\" alt=\"%@\" />";
+static NSString *inlineImagePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\s*(\\=([0-9]+?)x([0-9]+?)){0,1}\\)";
+static NSString *inlineImageFormat = @"<img src=\"%@\" width=\"%@\" height=\"%@\" alt=\"%@\" />";
 
-static NSString *referenceImagePattern = @"\\!\\[(.+?)\\]\\s*\\[(.+?)\\]";
-static NSString *referenceImageFormat = @"<img src=\"%@\" alt=\"%@\" />";
+static NSString *referenceImagePattern = @"\\!\\[(.+?)\\]\\s*\\[(.+?)\\s*(\\=([0-9]+?)x([0-9]+?)){0,1}\\]";
+static NSString *referenceImageFormat = @"<img src=\"%@\" width=\"%@\" height=\"%@\" alt=\"%@\" />";
 
 static NSString *boldPattern = @"\\*([^\n\\ ][^\n]+?[^\n\\ ])\\*";
 static NSString *boldFormat = @"<strong>%@</strong>";
@@ -102,7 +102,7 @@ static NSString *delFormat = @"<del>%@</del>";
                     stringByReplacingMatchesInString:self.content
                     options:0
                     range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$1", @"$2"]];
+                    withTemplate:[NSString stringWithFormat:inlineImageFormat, @"$1", @"$4",@"$5", @"$2"]];
 }
 
 - (void) convertReferenceImage
@@ -118,7 +118,7 @@ static NSString *delFormat = @"<del>%@</del>";
                     stringByReplacingMatchesInString:self.content
                     options:0
                     range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$1", @"$2"]];
+                    withTemplate:[NSString stringWithFormat:referenceImageFormat, @"$1", @"$4",@"$5", @"$2"]];
 }
 
 - (void) convertInlineLink
