@@ -21,7 +21,7 @@ static NSString *referenceLinkPattern = @"\\[(.+?)\\]\\s*\\[(.+?)\\]";
 static NSString *referenceLinkFormat = @"<a href=\"%@\">%@</a>";
 
 
-static NSString *youtubeVideoPattern = @"\\!v\\[(.+?)\\]\\s*\\[([0-9]+?)x([0-9]+?)\\]";
+static NSString *youtubeVideoPattern = @"\\!v\\[(.+?)\\]\\s*\\[(([0-9]+?)x([0-9]+?)){0,1}\\]";
 static NSString *youtubeVideoFormat = @"<iframe width='%@' height='%@' src='%@' frameborder='0' allowfullscreen></iframe>";
 
 static NSString *inlineImagePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\s*(\\=([0-9]+?)x([0-9]+?)){0,1}\\)";
@@ -165,6 +165,6 @@ static NSString *delFormat = @"<del>%@</del>";
                     stringByReplacingMatchesInString:self.content
                     options:0
                     range:NSMakeRange(0, [self.content length])
-                    withTemplate:[NSString stringWithFormat:youtubeVideoFormat, @"$2", @"$3", @"$1"]];
+                    withTemplate:[NSString stringWithFormat:youtubeVideoFormat, @"$3", @"$4", @"$1"]];
 }
 @end
