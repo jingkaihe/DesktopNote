@@ -38,20 +38,52 @@
     
     //Set your webview's preferences
     [self.webView setPreferences:webPrefs];
+    
+    [[NSRunLoop mainRunLoop] addTimer:self.timer
+                              forMode:NSRunLoopCommonModes];
+}
+
+-(NSTimer *) timer
+{
+    double timeInterval = 2.0;
+    if (!_timer) {
+        _timer = [NSTimer timerWithTimeInterval:timeInterval target:self selector:@selector(renderContent:) userInfo:nil repeats:YES];
+    }
+    return _timer;
+}
+
+-(NSMutableArray *) renderingStack
+{
+    if (!_renderingStack) {
+        _renderingStack = [[NSMutableArray alloc] init];
+    }
+    return _renderingStack;
+}
+
+-(void)renderContent:(NSTimer *)timer
+{
+    NSLog(@"%lu", (unsigned long)[self.renderingStack count]);
+    
+    if ([self.renderingStack isEmpty]) {
+        return;
+    }
+    
+    NSString *content = [self.renderingStack pop];
+    
+    Document *doc = [[Document alloc]
+                     initWithContent:content];
+    
+    Parser *parser = [[Parser alloc] initWithDocument:doc];
+    [parser parse];
+    
+    [[self.webView mainFrame]
+     loadHTMLString:[parser render] baseURL:nil];
 }
 
 - (void)textViewDidChangeSelection:(NSNotification *)notification
 {
     if ([notification object] == self.contentField) {
-        
-        Document *doc = [[Document alloc]
-                         initWithContent:self.contentField.string];
-        
-        Parser *parser = [[Parser alloc] initWithDocument:doc];
-        [parser parse];
-
-        [[self.webView mainFrame]
-         loadHTMLString:[parser render] baseURL:nil];
+        [self.renderingStack push:self.contentField.string];
     }
 }
 

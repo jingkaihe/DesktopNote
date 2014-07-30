@@ -11,6 +11,7 @@
 #import <Quartz/Quartz.h>
 #import "Note.h"
 #import "Parser.h"
+#import "NSMutableArray+EventStack.h"
 
 @interface NoteController : NSObject <NSTableViewDelegate, NSTextViewDelegate>
 
@@ -26,4 +27,6 @@
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) Note *selectedNote;
 
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableArray *renderingStack;
 @end

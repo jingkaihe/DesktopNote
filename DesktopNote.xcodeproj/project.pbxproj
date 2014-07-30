@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A1075D75196AF2BE00D6ACD6 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = A1075D74196AF2BE00D6ACD6 /* markdown.css */; };
 		A135350E1969DD92005CD389 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A135350D1969DD92005CD389 /* WebKit.framework */; };
+		A138E3AC198908C700573FB6 /* NSMutableArray+EventStack.m in Sources */ = {isa = PBXBuildFile; fileRef = A138E3AB198908C700573FB6 /* NSMutableArray+EventStack.m */; };
 		A13BB57D1959D4D90023AE15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13BB57C1959D4D90023AE15 /* Cocoa.framework */; };
 		A13BB5871959D4D90023AE15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A13BB5851959D4D90023AE15 /* InfoPlist.strings */; };
 		A13BB5891959D4D90023AE15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BB5881959D4D90023AE15 /* main.m */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		A1075D74196AF2BE00D6ACD6 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
 		A135350D1969DD92005CD389 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A138E3AA198908C700573FB6 /* NSMutableArray+EventStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EventStack.h"; sourceTree = "<group>"; };
+		A138E3AB198908C700573FB6 /* NSMutableArray+EventStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EventStack.m"; sourceTree = "<group>"; };
 		A13BB5791959D4D90023AE15 /* DesktopNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13BB57C1959D4D90023AE15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A13BB57F1959D4D90023AE15 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -232,6 +235,8 @@
 			children = (
 				A1504950196D7515001C2341 /* Note.h */,
 				A1504951196D7515001C2341 /* Note.m */,
+				A138E3AA198908C700573FB6 /* NSMutableArray+EventStack.h */,
+				A138E3AB198908C700573FB6 /* NSMutableArray+EventStack.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				A1DC2A551969D7EE0079DD15 /* HorizontalFragment.m in Sources */,
 				A1DC2A531969D7EE0079DD15 /* BlankLineFragment.m in Sources */,
 				A1DC2A5F1969D7FC0079DD15 /* Document.m in Sources */,
+				A138E3AC198908C700573FB6 /* NSMutableArray+EventStack.m in Sources */,
 				A1DC2A571969D7EE0079DD15 /* LinedHeadingFragment.m in Sources */,
 				A1DC2A561969D7EE0079DD15 /* ParagraphFragment.m in Sources */,
 			);
