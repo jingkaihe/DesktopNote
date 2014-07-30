@@ -29,4 +29,7 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *renderingStack;
+
+@property (nonatomic, strong) dispatch_queue_t renderingQueue;
+
 @end
