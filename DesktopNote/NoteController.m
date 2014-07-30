@@ -62,8 +62,6 @@
 
 -(void)renderContent:(NSTimer *)timer
 {
-    NSLog(@"%lu", (unsigned long)[self.renderingStack count]);
-    
     if ([self.renderingStack isEmpty]) {
         return;
     }
@@ -232,7 +230,6 @@
         NSArray *files = [openPanel URLs];
         
         for (NSURL *file in files) {
-            NSLog(@"File Path: %@", [file path]);
             
             NSString *filePath = [file path];
             
