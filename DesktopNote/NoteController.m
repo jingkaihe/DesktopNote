@@ -40,18 +40,31 @@
     [self.webView setPreferences:webPrefs];
 }
 
+
+-(dispatch_queue_t) renderingQueue
+{
+    if (!_renderingQueue) {
+        _renderingQueue = dispatch_queue_create("rendering queue", NULL);
+    }
+    return _renderingQueue;
+}
+
 - (void)textViewDidChangeSelection:(NSNotification *)notification
 {
     if ([notification object] == self.contentField) {
         
-        Document *doc = [[Document alloc]
-                         initWithContent:self.contentField.string];
-        
-        Parser *parser = [[Parser alloc] initWithDocument:doc];
-        [parser parse];
-
-        [[self.webView mainFrame]
-         loadHTMLString:[parser render] baseURL:nil];
+        dispatch_async(self.renderingQueue, ^{
+            Document *doc = [[Document alloc]
+                             initWithContent:self.contentField.string];
+            
+            Parser *parser = [[Parser alloc] initWithDocument:doc];
+            [parser parse];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[self.webView mainFrame]
+                 loadHTMLString:[parser render] baseURL:nil];
+            });
+        });
     }
 }
 

@@ -26,4 +26,5 @@
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) Note *selectedNote;
 
+@property (nonatomic, strong) dispatch_queue_t renderingQueue;
 @end
