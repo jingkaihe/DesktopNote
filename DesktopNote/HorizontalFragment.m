@@ -31,11 +31,11 @@ static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
                                   initWithPattern:pattern
                                   options:0
                                   error:&error];
-
+    
     BOOL regexMatch = [[regex
-                       matchesInString:line
-                       options:0
-                       range:NSMakeRange(0, [line length])] count] > 0;
+                        matchesInString:line
+                        options:0
+                        range:NSMakeRange(0, [line length])] count] > 0;
     
     if (!regexMatch) {
         return NO;
@@ -43,7 +43,7 @@ static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
     
     BaseFragment *element = document.elements.lastObject;
     
-    return [element isKindOfClass:[BlankLineFragment class]];
+    return [element isKindOfClass:[BlankLineFragment class]] || !element;
 }
 
 - (void) parse
