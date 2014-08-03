@@ -43,7 +43,7 @@ static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
     
     BaseFragment *element = document.elements.lastObject;
     
-    return [element isKindOfClass:[BlankLineFragment class]];
+    return [element isKindOfClass:[BlankLineFragment class]] || !element;
 }
 
 - (void) parse
