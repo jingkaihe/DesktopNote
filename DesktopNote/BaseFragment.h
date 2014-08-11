@@ -20,6 +20,6 @@
 - (void) parse;
 - (NSString *) toHTML;
 
-- (NSString *) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format;
+- (NSString *) replaceContextWithRegex: (NSRegularExpression *)regex withFormat: (NSString *)format;
 
 @end

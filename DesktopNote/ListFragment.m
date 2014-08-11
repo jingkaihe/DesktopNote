@@ -10,23 +10,30 @@
 
 static NSString *orderedListPattern = @"\\A[\\d+]\\.\\s+(.+)";
 static NSString *unorderedListPattern = @"\\A[\\*-]\\s+(.+)";
+static NSRegularExpression *orderedListRegex;
+static NSRegularExpression *unorderedListRegex;
 
 @implementation ListFragment
 
-+(BOOL)isListWithLine:(NSString *)line andDocument:(Document *)document
++ (void) initialize
 {
-    NSError *error1, *error2;
+    if (!orderedListRegex) {
+        orderedListRegex = [[NSRegularExpression alloc]
+                            initWithPattern:orderedListPattern
+                            options:0
+                            error:nil];
+    }
     
-    NSRegularExpression *orderedListRegex = [[NSRegularExpression alloc]
-                                             initWithPattern:orderedListPattern
-                                             options:0
-                                             error:&error1];
-    
-    NSRegularExpression *unorderedListRegex = [[NSRegularExpression alloc]
-                                               initWithPattern:unorderedListPattern
-                                               options:0
-                                               error:&error2];
-    
+    if (!unorderedListRegex) {
+        unorderedListRegex = [[NSRegularExpression alloc]
+                              initWithPattern:unorderedListPattern
+                              options:0
+                              error:nil];
+    }
+}
+
++ (BOOL)isListWithLine:(NSString *)line andDocument:(Document *)document
+{
     NSRange range = NSMakeRange(0, [line length]);
     
     if ([[orderedListRegex matchesInString:line options:0 range:range] count] > 0) {
@@ -50,18 +57,7 @@ static NSString *unorderedListPattern = @"\\A[\\*-]\\s+(.+)";
 
 +(NSString *) getListContentByText:(NSString *)text
 {
-    NSError *error1, *error2;
-    
     NSRange range = NSMakeRange(0, [text length]);
-    NSRegularExpression *orderedListRegex = [[NSRegularExpression alloc]
-                                             initWithPattern:orderedListPattern
-                                             options:0
-                                             error:&error1];
-    
-    NSRegularExpression *unorderedListRegex = [[NSRegularExpression alloc]
-                                               initWithPattern:unorderedListPattern
-                                               options:0
-                                               error:&error2];
     
     char firstChar = [text characterAtIndex:0];
     if (firstChar == '*' || firstChar == '-') {

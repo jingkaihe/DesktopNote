@@ -8,10 +8,20 @@
 
 #import "HorizontalFragment.h"
 
-static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
+static NSString *pattern = @"\\A[\\*-=]{3,}\\s*";
+static NSRegularExpression *regex;
 
 @implementation HorizontalFragment
 
++ (void)initialize
+{
+    if (!regex) {
+        regex = [NSRegularExpression
+                 regularExpressionWithPattern:pattern
+                 options:0
+                 error:nil];
+    }
+}
 - (instancetype) init
 {
     self = [super init];
@@ -24,14 +34,7 @@ static NSString *pattern = @"\\A[\\*=]{3,}\\s*";
 }
 
 + (BOOL) isWithLine:(NSString *)line andDocument:(Document *)document
-{
-    NSError *error;
-    
-    NSRegularExpression *regex = [[NSRegularExpression alloc]
-                                  initWithPattern:pattern
-                                  options:0
-                                  error:&error];
-    
+{    
     BOOL regexMatch = [[regex
                         matchesInString:line
                         options:0

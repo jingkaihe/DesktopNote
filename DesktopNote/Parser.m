@@ -69,7 +69,6 @@
                                         initWithContent:lineOfMD
                                         andDocument:_document];
             [frag parse];
-            
         }else if ([ListFragment isListWithLine:lineOfMD andDocument:_document] == YES){
             ++ _document.startLine;
             
@@ -114,11 +113,37 @@
 -(NSString *) render
 {
     if (_renderedString == nil) {
-        NSMutableArray *arrayOfRenderedString = [[NSMutableArray alloc] init];
-        for (BaseFragment *element in self.document.elements ) {
-            [arrayOfRenderedString addObject: [element toHTML]];
+        NSInteger elementsCount = self.document.elements.count;
+        NSInteger processorCount = [[NSProcessInfo processInfo] processorCount];
+
+        NSMutableArray *arrayOfRenderedString = [NSMutableArray arrayWithCapacity:elementsCount];
+        for (int i = 0; i < elementsCount; ++i) {
+            [arrayOfRenderedString addObject:@""];
         }
         
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_group_t group = dispatch_group_create();
+        
+        NSInteger dispatchingBlock = elementsCount < processorCount ?
+            elementsCount : (elementsCount / processorCount);
+        NSInteger startingElementIndex = 0;
+        
+        while (startingElementIndex < elementsCount) {
+            dispatch_group_async(group, queue, ^{
+
+                for (NSInteger i = startingElementIndex;
+                     i < elementsCount && i < startingElementIndex + dispatchingBlock;
+                     ++ i) {
+
+                    arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
+                }
+            });
+            startingElementIndex += dispatchingBlock;
+        }
+        
+        
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+
         _renderedString = [arrayOfRenderedString componentsJoinedByString:@"\n"];
     }
     
