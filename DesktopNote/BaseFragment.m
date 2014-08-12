@@ -19,7 +19,7 @@
     }
     
     return self;
-
+    
 }
 
 - (instancetype) initWithContent:(NSString *)content andDocument:(Document *)document
@@ -37,7 +37,7 @@
 - (instancetype) initWithContent: (NSString *)content
 {
     self = [self init];
- 
+    
     if (self) {
         self.content = content;
     }
@@ -45,15 +45,8 @@
     return self;
 }
 
-- (NSString *) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format
+- (NSString *) replaceContextWithRegex: (NSRegularExpression *)regex withFormat: (NSString *)format
 {
-    NSError *error = error;
-    
-    NSRegularExpression * regex = [NSRegularExpression
-                                   regularExpressionWithPattern:pattern
-                                   options:0
-                                   error:&error];
-        
     return [regex
             stringByReplacingMatchesInString:self.content
             options:0
@@ -68,7 +61,7 @@
 
 -(void) parse
 {
-   [NSException raise:@"Not implemented Error" format:@"parse method is not implemented"];
+    [NSException raise:@"Not implemented Error" format:@"parse method is not implemented"];
 }
 
 - (NSString *) description

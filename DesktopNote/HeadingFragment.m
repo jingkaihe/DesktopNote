@@ -10,6 +10,8 @@
 
 @implementation HeadingFragment
 
+static NSRegularExpression *regex;
+
 +(NSString *) pattern
 {
     static NSString *_pattern;
@@ -21,16 +23,18 @@
     return _pattern;
 }
 
++(void)initialize
+{
+    if (regex == nil) {
+        regex = [NSRegularExpression
+                  regularExpressionWithPattern:[self.class pattern]
+                  options:0
+                  error:nil];
+    }
+}
 -(NSString *)toHTML
 {
     NSString *format = @"<h%d>%@</h%d>";
-    
-    NSError *error = error;
-    
-    NSRegularExpression * regex = [NSRegularExpression
-                                   regularExpressionWithPattern:[self.class pattern]
-                                   options:0
-                                   error:&error];
     
     NSArray *arrayOfAllMatches = [regex
                                   matchesInString:self.content
