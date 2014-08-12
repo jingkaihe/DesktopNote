@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A1075D75196AF2BE00D6ACD6 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = A1075D74196AF2BE00D6ACD6 /* markdown.css */; };
+		A10C57B01999932E0064C588 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C579F1999932E0064C588 /* BaseFragment.m */; };
+		A10C57B11999932E0064C588 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57A11999932E0064C588 /* BlankLineFragment.m */; };
+		A10C57B21999932E0064C588 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57A31999932E0064C588 /* HeadingFragment.m */; };
+		A10C57B31999932E0064C588 /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57A51999932E0064C588 /* HorizontalFragment.m */; };
+		A10C57B41999932E0064C588 /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57A71999932E0064C588 /* ParagraphFragment.m */; };
+		A10C57B51999932E0064C588 /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57A91999932E0064C588 /* LinedHeadingFragment.m */; };
+		A10C57B61999932E0064C588 /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57AB1999932E0064C588 /* TextFragment.m */; };
+		A10C57B71999932E0064C588 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57AD1999932E0064C588 /* Fragments.m */; };
+		A10C57B81999932E0064C588 /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57AF1999932E0064C588 /* ListFragment.m */; };
+		A10C57BD199993400064C588 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57BA199993400064C588 /* Document.m */; };
+		A10C57BE199993400064C588 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C57BC199993400064C588 /* Parser.m */; };
 		A135350E1969DD92005CD389 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A135350D1969DD92005CD389 /* WebKit.framework */; };
 		A13BB57D1959D4D90023AE15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13BB57C1959D4D90023AE15 /* Cocoa.framework */; };
 		A13BB5871959D4D90023AE15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A13BB5851959D4D90023AE15 /* InfoPlist.strings */; };
@@ -24,17 +35,6 @@
 		A150494F196D748F001C2341 /* DesktopNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A150494D196D748F001C2341 /* DesktopNote.xcdatamodeld */; };
 		A1504952196D7515001C2341 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A1504951196D7515001C2341 /* Note.m */; };
 		A183F6FE1975933600AB5794 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A183F6FD1975933600AB5794 /* Quartz.framework */; };
-		A1DC2A521969D7EE0079DD15 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A411969D7EE0079DD15 /* BaseFragment.m */; };
-		A1DC2A531969D7EE0079DD15 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A431969D7EE0079DD15 /* BlankLineFragment.m */; };
-		A1DC2A541969D7EE0079DD15 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A451969D7EE0079DD15 /* HeadingFragment.m */; };
-		A1DC2A551969D7EE0079DD15 /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A471969D7EE0079DD15 /* HorizontalFragment.m */; };
-		A1DC2A561969D7EE0079DD15 /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A491969D7EE0079DD15 /* ParagraphFragment.m */; };
-		A1DC2A571969D7EE0079DD15 /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A4B1969D7EE0079DD15 /* LinedHeadingFragment.m */; };
-		A1DC2A581969D7EE0079DD15 /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A4D1969D7EE0079DD15 /* TextFragment.m */; };
-		A1DC2A591969D7EE0079DD15 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A4F1969D7EE0079DD15 /* Fragments.m */; };
-		A1DC2A5A1969D7EE0079DD15 /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A511969D7EE0079DD15 /* ListFragment.m */; };
-		A1DC2A5F1969D7FC0079DD15 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A5C1969D7FC0079DD15 /* Document.m */; };
-		A1DC2A601969D7FC0079DD15 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DC2A5E1969D7FC0079DD15 /* Parser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,28 @@
 
 /* Begin PBXFileReference section */
 		A1075D74196AF2BE00D6ACD6 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
+		A10C579E1999932E0064C588 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
+		A10C579F1999932E0064C588 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
+		A10C57A01999932E0064C588 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
+		A10C57A11999932E0064C588 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
+		A10C57A21999932E0064C588 /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
+		A10C57A31999932E0064C588 /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
+		A10C57A41999932E0064C588 /* HorizontalFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalFragment.h; sourceTree = "<group>"; };
+		A10C57A51999932E0064C588 /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
+		A10C57A61999932E0064C588 /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
+		A10C57A71999932E0064C588 /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
+		A10C57A81999932E0064C588 /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
+		A10C57A91999932E0064C588 /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
+		A10C57AA1999932E0064C588 /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
+		A10C57AB1999932E0064C588 /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
+		A10C57AC1999932E0064C588 /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
+		A10C57AD1999932E0064C588 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
+		A10C57AE1999932E0064C588 /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
+		A10C57AF1999932E0064C588 /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
+		A10C57B9199993400064C588 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		A10C57BA199993400064C588 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		A10C57BB199993400064C588 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		A10C57BC199993400064C588 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		A135350D1969DD92005CD389 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A13BB5791959D4D90023AE15 /* DesktopNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13BB57C1959D4D90023AE15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -75,28 +97,6 @@
 		A1504950196D7515001C2341 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		A1504951196D7515001C2341 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		A183F6FD1975933600AB5794 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		A1DC2A401969D7EE0079DD15 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
-		A1DC2A411969D7EE0079DD15 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
-		A1DC2A421969D7EE0079DD15 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
-		A1DC2A431969D7EE0079DD15 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
-		A1DC2A441969D7EE0079DD15 /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
-		A1DC2A451969D7EE0079DD15 /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
-		A1DC2A461969D7EE0079DD15 /* HorizontalFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalFragment.h; sourceTree = "<group>"; };
-		A1DC2A471969D7EE0079DD15 /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
-		A1DC2A481969D7EE0079DD15 /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
-		A1DC2A491969D7EE0079DD15 /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
-		A1DC2A4A1969D7EE0079DD15 /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
-		A1DC2A4B1969D7EE0079DD15 /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
-		A1DC2A4C1969D7EE0079DD15 /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
-		A1DC2A4D1969D7EE0079DD15 /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
-		A1DC2A4E1969D7EE0079DD15 /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
-		A1DC2A4F1969D7EE0079DD15 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
-		A1DC2A501969D7EE0079DD15 /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
-		A1DC2A511969D7EE0079DD15 /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
-		A1DC2A5B1969D7FC0079DD15 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		A1DC2A5C1969D7FC0079DD15 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		A1DC2A5D1969D7FC0079DD15 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
-		A1DC2A5E1969D7FC0079DD15 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +239,10 @@
 		A1DC2A3E1969D7C90079DD15 /* MicroDown */ = {
 			isa = PBXGroup;
 			children = (
-				A1DC2A5B1969D7FC0079DD15 /* Document.h */,
-				A1DC2A5C1969D7FC0079DD15 /* Document.m */,
-				A1DC2A5D1969D7FC0079DD15 /* Parser.h */,
-				A1DC2A5E1969D7FC0079DD15 /* Parser.m */,
+				A10C57B9199993400064C588 /* Document.h */,
+				A10C57BA199993400064C588 /* Document.m */,
+				A10C57BB199993400064C588 /* Parser.h */,
+				A10C57BC199993400064C588 /* Parser.m */,
 				A1DC2A3F1969D7E30079DD15 /* Fragments */,
 			);
 			name = MicroDown;
@@ -251,24 +251,24 @@
 		A1DC2A3F1969D7E30079DD15 /* Fragments */ = {
 			isa = PBXGroup;
 			children = (
-				A1DC2A401969D7EE0079DD15 /* BaseFragment.h */,
-				A1DC2A411969D7EE0079DD15 /* BaseFragment.m */,
-				A1DC2A421969D7EE0079DD15 /* BlankLineFragment.h */,
-				A1DC2A431969D7EE0079DD15 /* BlankLineFragment.m */,
-				A1DC2A441969D7EE0079DD15 /* HeadingFragment.h */,
-				A1DC2A451969D7EE0079DD15 /* HeadingFragment.m */,
-				A1DC2A461969D7EE0079DD15 /* HorizontalFragment.h */,
-				A1DC2A471969D7EE0079DD15 /* HorizontalFragment.m */,
-				A1DC2A481969D7EE0079DD15 /* ParagraphFragment.h */,
-				A1DC2A491969D7EE0079DD15 /* ParagraphFragment.m */,
-				A1DC2A4A1969D7EE0079DD15 /* LinedHeadingFragment.h */,
-				A1DC2A4B1969D7EE0079DD15 /* LinedHeadingFragment.m */,
-				A1DC2A4C1969D7EE0079DD15 /* TextFragment.h */,
-				A1DC2A4D1969D7EE0079DD15 /* TextFragment.m */,
-				A1DC2A4E1969D7EE0079DD15 /* Fragments.h */,
-				A1DC2A4F1969D7EE0079DD15 /* Fragments.m */,
-				A1DC2A501969D7EE0079DD15 /* ListFragment.h */,
-				A1DC2A511969D7EE0079DD15 /* ListFragment.m */,
+				A10C579E1999932E0064C588 /* BaseFragment.h */,
+				A10C579F1999932E0064C588 /* BaseFragment.m */,
+				A10C57A01999932E0064C588 /* BlankLineFragment.h */,
+				A10C57A11999932E0064C588 /* BlankLineFragment.m */,
+				A10C57A21999932E0064C588 /* HeadingFragment.h */,
+				A10C57A31999932E0064C588 /* HeadingFragment.m */,
+				A10C57A41999932E0064C588 /* HorizontalFragment.h */,
+				A10C57A51999932E0064C588 /* HorizontalFragment.m */,
+				A10C57A61999932E0064C588 /* ParagraphFragment.h */,
+				A10C57A71999932E0064C588 /* ParagraphFragment.m */,
+				A10C57A81999932E0064C588 /* LinedHeadingFragment.h */,
+				A10C57A91999932E0064C588 /* LinedHeadingFragment.m */,
+				A10C57AA1999932E0064C588 /* TextFragment.h */,
+				A10C57AB1999932E0064C588 /* TextFragment.m */,
+				A10C57AC1999932E0064C588 /* Fragments.h */,
+				A10C57AD1999932E0064C588 /* Fragments.m */,
+				A10C57AE1999932E0064C588 /* ListFragment.h */,
+				A10C57AF1999932E0064C588 /* ListFragment.m */,
 			);
 			name = Fragments;
 			sourceTree = "<group>";
@@ -372,22 +372,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10C57BE199993400064C588 /* Parser.m in Sources */,
+				A10C57B21999932E0064C588 /* HeadingFragment.m in Sources */,
+				A10C57B51999932E0064C588 /* LinedHeadingFragment.m in Sources */,
+				A10C57B61999932E0064C588 /* TextFragment.m in Sources */,
+				A10C57BD199993400064C588 /* Document.m in Sources */,
+				A10C57B81999932E0064C588 /* ListFragment.m in Sources */,
+				A10C57B11999932E0064C588 /* BlankLineFragment.m in Sources */,
 				A150494F196D748F001C2341 /* DesktopNote.xcdatamodeld in Sources */,
+				A10C57B71999932E0064C588 /* Fragments.m in Sources */,
 				A13BB5B51959D5710023AE15 /* NoteController.m in Sources */,
-				A1DC2A591969D7EE0079DD15 /* Fragments.m in Sources */,
-				A1DC2A521969D7EE0079DD15 /* BaseFragment.m in Sources */,
-				A1DC2A581969D7EE0079DD15 /* TextFragment.m in Sources */,
-				A1DC2A601969D7FC0079DD15 /* Parser.m in Sources */,
+				A10C57B41999932E0064C588 /* ParagraphFragment.m in Sources */,
+				A10C57B01999932E0064C588 /* BaseFragment.m in Sources */,
 				A13BB5901959D4D90023AE15 /* AppDelegate.m in Sources */,
+				A10C57B31999932E0064C588 /* HorizontalFragment.m in Sources */,
 				A1504952196D7515001C2341 /* Note.m in Sources */,
-				A1DC2A541969D7EE0079DD15 /* HeadingFragment.m in Sources */,
 				A13BB5891959D4D90023AE15 /* main.m in Sources */,
-				A1DC2A5A1969D7EE0079DD15 /* ListFragment.m in Sources */,
-				A1DC2A551969D7EE0079DD15 /* HorizontalFragment.m in Sources */,
-				A1DC2A531969D7EE0079DD15 /* BlankLineFragment.m in Sources */,
-				A1DC2A5F1969D7FC0079DD15 /* Document.m in Sources */,
-				A1DC2A571969D7EE0079DD15 /* LinedHeadingFragment.m in Sources */,
-				A1DC2A561969D7EE0079DD15 /* ParagraphFragment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
