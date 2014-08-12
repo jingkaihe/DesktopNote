@@ -45,7 +45,7 @@
 
 -(NSTimer *) timer
 {
-    double timeInterval = 2.0;
+    double timeInterval = 0.3;
     if (!_timer) {
         _timer = [NSTimer timerWithTimeInterval:timeInterval target:self selector:@selector(renderContent:) userInfo:nil repeats:YES];
     }
