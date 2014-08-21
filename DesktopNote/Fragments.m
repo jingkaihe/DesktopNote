@@ -10,6 +10,9 @@
 
 @implementation Fragments
 
+/*
+ * Preload & lazy load the blank line pattern to static memory
+ */
 +(NSRegularExpression *) blankLineRegex
 {
     NSError *error;
@@ -25,6 +28,9 @@
     return _blankLineRegex;
 }
 
+/*
+ * Preload & lazy load the heading pattern to static memory
+ */
 +(NSRegularExpression *) headingRegex
 {
     NSError *error;

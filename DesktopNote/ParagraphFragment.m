@@ -21,21 +21,29 @@
     return self;
 }
 
+/*
+ * Add itself to father node
+ */
 - (void) parse
 {
     [self.document.elements addObject:self];
 }
 
+// Delegate the addObject method
 - (void) addChildren: (TextFragment *)child
 {
     [self.children addObject:child];
 }
 
+// Delegate the removeLastObject method
 - (void) removeLastChild
 {
     [self.children removeLastObject];
 }
 
+/*
+ * Paragraph code generation. Insert sentences to paragraph
+ */
 - (NSString *) toHTML
 {
     NSMutableArray *contentOfChildren = [[NSMutableArray alloc] init];

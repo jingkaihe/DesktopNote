@@ -23,6 +23,7 @@
 
 -(NSString *) toHTML
 {
+    // Actually it is blank, act as an abstract node
     return @"";
     
 }

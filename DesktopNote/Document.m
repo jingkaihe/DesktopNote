@@ -21,12 +21,16 @@
     return self;
 }
 
+/*
+ * Initialise by the content
+ * parameters: content - NSString
+ */
 - (instancetype) initWithContent: (NSString *)content
 {
     self = [super init];
     
     if (self) {
-        
+        // initialise the parameters of document
         self.arrayOfLines = [[NSMutableArray alloc] init];
         
         NSError *error = error;
@@ -44,6 +48,9 @@
     return self;
 }
 
+/*
+ * Override the description method
+ */
 - (NSString *) description
 {
     NSString *resultArray = [self.arrayOfLines componentsJoinedByString:@"\n"];

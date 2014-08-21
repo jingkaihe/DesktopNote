@@ -50,6 +50,10 @@ static NSRegularExpression *delRegex;
 
 @implementation TextFragment
 
+/*
+ * Lazy pre-load all the patterns to static memory.
+ * Once load, won't need load anymore.
+ */
 +(void) initialize
 {
     if (!emailRegex) {

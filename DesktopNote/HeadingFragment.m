@@ -23,6 +23,9 @@ static NSRegularExpression *regex;
     return _pattern;
 }
 
+/*
+ * Lazy preload the regular expression.
+ */
 +(void)initialize
 {
     if (regex == nil) {
@@ -32,6 +35,7 @@ static NSRegularExpression *regex;
                   error:nil];
     }
 }
+
 -(NSString *)toHTML
 {
     NSString *format = @"<h%d>%@</h%d>";

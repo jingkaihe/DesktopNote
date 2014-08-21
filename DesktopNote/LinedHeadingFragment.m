@@ -43,6 +43,9 @@ static NSRegularExpression *h2Regex;
     return self;
 }
 
+/*
+ * Class method for heading recognation
+ */
 + (BOOL) isHeadingWithLine: (NSString *)line andDocument: (Document *) document;
 {
     NSError *error1, *error2;
@@ -73,6 +76,9 @@ static NSRegularExpression *h2Regex;
     return _isHeading;
 }
 
+/*
+ * Code generation. The result would be saved, won't evalute the next time.
+ */
 - (NSString *) toHTML
 {
     if (self.parsed == YES) {
@@ -117,6 +123,9 @@ static NSRegularExpression *h2Regex;
     return self.content;
 }
 
+/*
+ * Add it to its father node
+ */
 - (void) parse
 {
     [self toHTML];

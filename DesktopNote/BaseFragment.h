@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Document.h"
 
+/*
+ * Base class of the code fragment.
+ */
 @interface BaseFragment : NSObject
 
 @property (copy) NSString *content;
-@property (weak) Document *document;
+@property (weak) Document *document; // Father node
 
 - (instancetype) initWithContent: (NSString *)content;
 - (instancetype) initWithContent: (NSString *)content andDocument: (Document *)document;
